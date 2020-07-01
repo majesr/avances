@@ -1,0 +1,44 @@
+<!-- ============================================================== -->
+<!-- Stats box -->
+<!-- ============================================================== -->
+<div class="container">
+    <div class="row">
+        <div class="col-4" *ngFor="let c of categorias ">
+            <div class="card">
+                <div class="card-body">
+                    <div class="d-flex">
+                        <div class="m-r-20 align-self-center"><img src="../assets/images/icon/income.png" alt="Income" /></div>
+                        <div class="align-self-center">
+                            <h6 class="text-muted m-t-10 m-b-0">{{ c.descripcion}}</h6>
+                            <h4 class="m-t-0"> <a [routerLink]="'/servicios'+'/'+c.idcategoria" class="m-t-10 m-b-20 waves-effect waves-dark btn btn-success btn-md btn-rounded">Pagar</a>
+                            </h4>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- ============================================================== -->
+    <!-- Sales overview chart -->
+    <!-- ============================================================== -->
+
+    <!-- ============================================================== -->
+    <!-- Twitter facebook and mail boxes -->
+    <!-- ============================================================== -->
+    <div class="row">
+        <div class="col-4" *ngFor="let c of categorias">
+            <div class="card bg-info text-white">
+                <div class="card-body">
+                    <div class="d-flex">
+                        <div class="stats">
+                            <h6 class="text-white">{{ c.descripcion}}</h6>
+                            <button class="btn btn-rounded btn-outline btn-light m-t-10 font-14">Pagar</button>
+                        </div>
+                        <div class="stats-icon text-right ml-auto"><img src="assets/images/icon/expense-w.png" alt="Income" /></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

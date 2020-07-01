@@ -1,0 +1,35 @@
+<!-- column -->
+<div class="col-12">
+    <div class="card">
+        <div class="card-body">
+            <h4 class="card-title">Nuestros Servicios </h4>
+            <div class="table-responsive">
+                <table class="table">
+                    <thead>
+                        <tr>
+                            <th colspan="2"> Servicio </th>
+                            <th> Costo</th>
+                            <th> Distancia </th>
+                            <th class="text-nowrap"> Acciones </th>
+                        </tr>
+                    </thead>
+                    <tbody *ngFor="let s of servicios">
+                        <tr *ngIf="s.idcategoria == id">
+                            <td style="width:50px;"><span class="round">S</span></td>
+                            <td> {{s.nombre_servicio}} </td>
+                            <td> S/. {{s.costo}} </td>
+                            <td>
+                                <div class="label label-table label-danger">Lejos</div>
+                            </td>
+                            <td class="text-nowrap">
+                                <button (click)="addProducto(servicios)" class="btn btn-rounded btn-outline btn-light m-t-10 font-14"><i class="fa fa-shopping-basket"></i> Añadir Servicio</button>
+                            </td>
+
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- column -->
