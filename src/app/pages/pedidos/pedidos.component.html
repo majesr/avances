@@ -1,1 +1,73 @@
-<p>pedidos works!</p>
+<div class="carrito_vacio text-center" *ngIf="pedidoser.items.length === 0">
+    <i class="mdi mdi-cart-outline iconp"></i>
+    <br> Su carrito esta vacio...
+</div>
+
+<div *ngIf=" pedidoser.items.length != 0">
+
+    <div class="row">
+        <!-- Column -->
+        <div class="col-md-9 col-lg-9">
+            <div class="card">
+                <div class="card-header bg-info">
+                    <h5 class="mb-0 text-white">Su carrito ( {{ pedidoser.items.length }} ) Servicios</h5>
+                </div>
+                <div class="card-body">
+                    <div class="table-responsive">
+                        <table class="table product-overview">
+                            <thead>
+                                <tr>
+                                    <th colspan="2"> Servicio </th>
+                                    <th> Costo</th>
+                                    <th> Monto</th>
+                                    <th style="text-align:center"> </th>
+                                </tr>
+                            </thead>
+                            <tbody *ngFor="let s of pedidoser.items; let i = index;">
+                                <tr>
+                                    <td style="width:50px;"><span class="round">S</span></td>
+                                    <td> {{s.nombre_servicio}} </td>
+                                    <td>S/. {{s.costo}}</td>
+                                    <td width="105">
+                                        <input type="number" class="form-control" placeholder="0" min="0" max="1000">
+                                    </td>
+                                    <td><a (click)="pedidoser.eliminar_item(i)" class="text-inverse" title="" data-toggle="tooltip"><i class="ti-trash text-dark"></i></a></td>
+                                </tr>
+                            </tbody>
+                        </table>
+                        <hr>
+                        <div class="d-flex no-block align-items-center">
+                            <button class="btn btn-dark btn-outline"><i class="fa fa-arrow-left"></i> Seguir Pagando</button>
+
+                            <div class="ml-auto">
+                                <button (click)="hacerpedido()" class="btn btn-danger"><i class="fa fa fa-shopping-cart"></i> Realizar Pago</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- Column -->
+        <div class="col-md-3 col-lg-3">
+            <div class="card">
+                <div class="card-body">
+                    <h5 class="card-title">RESUMEN DE LA COMPRA</h5>
+                    <hr>
+                    <small>Total</small>
+                    <h2> S/. {{ pedidoser.totalcarrito}}</h2>
+                    <hr>
+                    <button (click)="pedidoser.actualizar_total()" class="btn btn-success">Actualizar Pago</button>
+                </div>
+            </div>
+            <div class="card">
+                <div class="card-body">
+                    <h5 class="card-title">Para cualquier consulta</h5>
+                    <hr>
+                    <h4><i class="ti-mobile"></i> 9998979695 (Llamada gratuita)</h4>
+                    <small>Póngase en contacto con nosotros si tiene alguna pregunta. Estamos disponibles las 24h.</small>
+                </div>
+            </div>
+        </div>
+    </div>
+
+</div>

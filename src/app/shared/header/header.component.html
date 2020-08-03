@@ -51,7 +51,7 @@
                 <!-- Messages -->
                 <!-- ============================================================== -->
                 <li class="nav-item dropdown">
-                    <a class="nav-link dropdown-toggle waves-effect waves-dark" href="#" aria-haspopup="true" aria-expanded="false"> <i class="mdi mdi-cart-outline"><span class="label label-rouded label-themecolor pull-right">4</span></i>
+                    <a routerLinK="pedidos" class="nav-link dropdown-toggle waves-effect waves-dark" aria-haspopup="true" aria-expanded="false"> <i class="mdi mdi-cart-outline"><span class="label label-rouded label-themecolor pull-right" *ngIf="pedidoser.items.length > 0">{{ pedidoser.items.length }}</span></i>
 
                     </a>
 

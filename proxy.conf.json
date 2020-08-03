@@ -1,0 +1,7 @@
+{
+    "/api/": {
+        "target": "https://www.jgitsolutions.com/",
+        "secure": false,
+        "logLevel": "debug"
+    }
+}

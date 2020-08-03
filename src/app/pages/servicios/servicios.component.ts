@@ -1,3 +1,4 @@
+import { PedidosService } from './../../services/pedidos.service';
 import { Component, OnInit } from '@angular/core';
 import { Servicio, ServiciosService } from '../../services/servicios.service';
 import { Params, ActivatedRoute, Router } from '@angular/router';
@@ -11,7 +12,9 @@ export class ServiciosComponent implements OnInit {
   servicios: Servicio[];
   public id: string;
 
+
   constructor(private serviciosservice: ServiciosService,
+              public pedidoser: PedidosService,
               private route: ActivatedRoute,
               private router: Router) { }
 
@@ -28,11 +31,6 @@ export class ServiciosComponent implements OnInit {
     });
   }
 
-  /**
-   * addProducto
-   */
-  addProducto(servicios) {
-    this.serviciosservice.addCarrito(servicios);
-  }
+
 
 }
