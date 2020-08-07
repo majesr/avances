@@ -11,6 +11,7 @@ import { ServiciosComponent } from './servicios/servicios.component';
 import { PedidosComponent } from './pedidos/pedidos.component';
 import { OrdenesComponent } from './ordenes/ordenes.component';
 import { CommonModule } from '@angular/common';
+import { PagosComponent } from './pagos/pagos.component';
 
 
 
@@ -20,7 +21,8 @@ import { CommonModule } from '@angular/common';
    DashboardComponent,
    ServiciosComponent,
    PedidosComponent,
-   OrdenesComponent
+   OrdenesComponent,
+   PagosComponent
     ],
   imports: [
     CommonModule,

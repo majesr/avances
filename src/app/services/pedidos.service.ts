@@ -10,44 +10,32 @@ import { UsuarioService } from './usuario.service';
 // paginas del modal
 import { LoginComponent } from '../login/login.component';
 import { URL_SERVICIOS } from '../config/url.servicios';
-import { Pedido } from '../models/pedido.models';
-import {Observable} from 'rxjs';
+
+
 
 /*
-export interface Pedidos{
+export interface Orden{
+  IDORDEN: string;
+  CODIGO_ORDEN: string;
+  COSTO_TOTAL: string;
+  PAGARE: string;
+  VUELTO: string;
+  ACTIVO: string;
+  CREATE_AT: string;
+  UPDATE_AT: string;
   IDPEDIDO: string;
-  CODIGO_PEDIDO: string;
-  CANTIDAD: string;
-  fecha_pedido_i: string;
-  hora_pedido_i: string;
-  create_at_i: string;
-  update_at_i: string;
-  activo_i: string;
-  IDUSUARIO: string;
-  IDESTADO_PEDIDO: string;
-  IDFORMA_PAGO: string;
+  IDTIPO_COMPROBANTE: string;
+  IDPROVEEDOR: string;
+  ID_SERVICIO: string;
 }
-
-private ped: Pedidos[] = [
-  {
-    IDPEDIDO: 'X',
-    CODIGO_PEDIDO: 'V1',
-    CANTIDAD: '6',
-    fecha_pedido_i:'29/07/2020',
-    hora_pedido_i: '00:00',
-    create_at_i: '29/07/2020',
-    update_at_i: '29/07/2020',
-    activo_i: '1',
-    IDUSUARIO: '1',
-    IDESTADO_PEDIDO: '1',
-    IDFORMA_PAGO: '1'
-  }
-];*/
+*/
 @Injectable({
 providedIn: 'root'
 })
 export class PedidosService {
+
 // private url = 'https://www.jgitsolutions.com/daleapp/dale/pedido';
+
   totalcarrito = 0;
   items: Servicio[] = [];
   constructor(private http: HttpClient,
@@ -68,12 +56,8 @@ export class PedidosService {
     return this.http.post(url , Pedido)
 
   } */
-  PEDIDO(pedidox: Pedido) {
-    const url = `https://www.jgitsolutions.com/daleapp/dale/pedido`;
-    return this.http.post(url, Pedido);
-  }
 
-/*  realizar_pedido() {
+  realizar_pedido() {
     const data = new URLSearchParams();
     const codigos: number[] = [];
     for (const item of this.items) {
@@ -100,7 +84,7 @@ export class PedidosService {
       });
       }
   });
-    } */
+  }
   // Agregar carrito
 
   agregar_carrito(carrito: any) {
@@ -138,7 +122,6 @@ export class PedidosService {
 
     }
   }
-
 
 
 }
