@@ -23,13 +23,13 @@
                                     <th style="text-align:center"> </th>
                                 </tr>
                             </thead>
-                            <tbody *ngFor="let s of pedidoser.items; let i = index;">
+                            <tbody *ngFor="let s of  pedidoser.items; let i = index;">
                                 <tr>
                                     <td style="width:50px;"><span class="round">S</span></td>
                                     <td> {{s.nombre_servicio}} </td>
                                     <td>S/. {{s.costo}}</td>
                                     <td width="105">
-                                        <input type="number" class="form-control" placeholder="0" min="0" max="1000">
+                                        <input type="number" class="form-control" name="cantidad" ngModel placeholder="0" min="0" max="1000">
                                     </td>
                                     <td><a (click)="pedidoser.eliminar_item(i)" class="text-inverse" title="" data-toggle="tooltip"><i class="ti-trash text-dark"></i></a></td>
                                 </tr>
@@ -40,7 +40,7 @@
                             <button class="btn btn-dark btn-outline"><i class="fa fa-arrow-left"></i> Seguir Pagando</button>
 
                             <div class="ml-auto">
-                                <button (click)="pedidoser.realizar_pedido()" class="btn btn-danger"><i class="fa fa fa-shopping-cart"></i> Realizar Pago</button>
+                                <button (click)="pedidoser.realizar_pedido()" type="button" class="btn btn-danger"><i class="fa fa fa-shopping-cart"></i> Realizar Pago</button>
                             </div>
                         </div>
                     </div>
@@ -51,23 +51,90 @@
         <div class="col-md-3 col-lg-3">
             <div class="card">
                 <div class="card-body">
-                    <h5 class="card-title">RESUMEN DE LA COMPRA</h5>
+                    <h5 class="card-title">RESUMEN :</h5>
                     <hr>
-                    <small>Total</small>
+                    <small>Costo Envio</small>
                     <h2> S/. {{ pedidoser.totalcarrito}}</h2>
                     <hr>
+                    <small>Costo Total</small>
+                    <h2> S/. {{ pedidoser.totalcarrito}}</h2>
                     <button (click)="pedidoser.actualizar_total()" class="btn btn-success">Actualizar Pago</button>
                 </div>
             </div>
-            <div class="card">
+            <!--         <div class="card">
                 <div class="card-body">
                     <h5 class="card-title">Para cualquier consulta</h5>
                     <hr>
                     <h4><i class="ti-mobile"></i> 9998979695 (Llamada gratuita)</h4>
                     <small>Póngase en contacto con nosotros si tiene alguna pregunta. Estamos disponibles las 24h.</small>
                 </div>
-            </div>
+            </div>  -->
+
         </div>
     </div>
+    <!-- ============================================================== -->
+    <!-- Table -->
+    <!-- ============================================================== -->
+    <div class="row">
+        <div class="col-md-12">
+            <div class="card">
+                <div class="card-body">
+                    <h5 class="card-title">FORMAS DE PAGO :</h5>
+                    <div class="table-responsive">
+                        <h5 class="card-title">Elija la opción de pago</h5>
+                        <ul class="nav nav-tabs" role="tablist">
+                            <li role="presentation" class="nav-item">
+                                <a href="#iprofile" class="nav-link active" aria-controls="home" role="tab" data-toggle="tab" aria-expanded="true">
+                                    <span class="visible-xs"><i class="ti-home"></i></span><span class="hidden-xs"> Tarjeta automática </span>
+                                </a>
+                            </li>
+                            <li role="presentation" class="nav-item">
+                                <a href="#ihome" class="nav-link" aria-controls="profile" role="tab" data-toggle="tab" aria-expanded="false">
+                                    <span class="visible-xs"><i class="ti-user"></i></span>
+                                    <span class="hidden-xs"> Efectivo</span>
+                                </a>
+                            </li>
+                        </ul>
+                        <div class="tab-content">
+                            <div role="tabpanel" class="tab-pane" id="ihome">
+                                <br/> Puede pagar su dinero de forma efectiva, para más información <a href="#"> haga clic aquí.</a>
+                                <br>
+                                <br>
+                                <button class="btn btn-info"><i class="fas fa-shipping-fast"></i> Pagar con Efectivo</button>
+                            </div>
+                            <div role="tabpanel" class="tab-pane active" id="iprofile">
+                                <div class="row">
+                                    <div class="col-md-6">
+                                        <div role="tabpanel" class="tab-pane" id="iprofile">
+                                            <br/> Pago automático, para más información <a href="#"> haga clic aquí.</a>
+                                            <br>
+                                            <br>
+                                            <button class="btn btn-info"><i class="fa fa-cc-visa"></i> Pagar</button>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-6 ml-auto">
+                                        <h4 class="card-title mt-4">Información general</h4>
+                                        <h2><i class="fa fa-cc-visa text-info"></i> <i class="fa fa-cc-mastercard text-danger"></i> <i class="fa fa-cc-discover text-success"></i> <i class="fa fa-cc-amex text-warning"></i></h2>
+                                        <p>Lorem ipsum dolor sit amet.</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- ============================================================== -->
 
-</div>
+    </div>
+    <!--
+    <h1>dff</h1>
+    <form #templateVariableName="" (ngSubmit)="onSubmit(templateVariableName.value)">
+        <input type="text" name="name" ngModel placeholder="name">
+        <input type="text" name="address" ngModel placeholder="address">
+        <input type="text" name="email" ngModel placeholder="email">
+        <input type="text" name="rating" ngModel placeholder="rating">
+        <button type="submit">enviar</button>
+
+
+    </form> -->

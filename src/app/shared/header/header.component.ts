@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import {  ServiciosService } from '../../services/servicios.service';
+import {  Servicio, ServiciosService } from '../../services/servicios.service';
 import { PedidosService } from '../../services/pedidos.service';
 
 
@@ -10,12 +10,11 @@ import { PedidosService } from '../../services/pedidos.service';
   ]
 })
 export class HeaderComponent implements OnInit {
-
-
+  items: Servicio[] = [];
 
 
   constructor(private servicioService: ServiciosService,
-              public pedidoser: PedidosService ) { }
+              public pedidoser: PedidosService) { }
 
   ngOnInit(): void {
 

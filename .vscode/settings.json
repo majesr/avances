@@ -1,5 +1,8 @@
 {
     "cSpell.words": [
         "Pedidos"
-    ]
+    ],
+    "files.watcherExclude": {
+        "**/target": true
+    }
 }

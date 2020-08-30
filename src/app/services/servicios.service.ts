@@ -4,9 +4,9 @@ import { HttpClient } from '@angular/common/http';
 
 
 export interface Servicio{
-  id_servicio: number;
+  id_servicio: string;
   nombre_servicio: string;
-  costo: number;
+  costo: string;
   idcategoria: string;
  }
 
@@ -23,6 +23,7 @@ export class ServiciosService {
   getAll() {
     return this.http.get<[Servicio]>(this.url);
   }
+
 
     }
 

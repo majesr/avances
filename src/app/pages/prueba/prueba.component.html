@@ -1,0 +1,23 @@
+<div class="container">
+    <form (ngSubmit)="onSubmit()">
+        <div class="form-group">
+            <label for="codp">Codigo Pedido</label>
+            <input type="text" class="form-control" id="codp" required [(ngModel)]="model.codigo_pedido_i" name="codp" #codp="ngModel" />
+        </div>
+
+        <div class="form-group">
+            <label for="cantidad">Monto</label>
+            <input type="number" class="form-control" id="cantidad" [(ngModel)]="model.cantidad_i" name="cantidad" />
+        </div>
+
+        <div class="form-group">
+            <label for="fecped">Fecha del Pedido</label>
+            <input type="date" class="form-control" id="fecped" [(ngModel)]="model.fecha_pedido_i" name="fecped" />
+        </div>
+
+
+        <button type="submit" class="btn btn-success">
+      Submit
+    </button>
+    </form>
+</div>

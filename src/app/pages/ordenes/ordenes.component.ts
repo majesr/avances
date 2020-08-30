@@ -1,5 +1,9 @@
 import { Component, OnInit } from '@angular/core';
-import { Pedidos, OrdenesService } from 'src/app/services/ordenes.service';
+import { OrdenesService } from 'src/app/services/ordenes.service';
+import { Pedidorde } from 'src/app/models/pedidorden';
+import { Ordenes } from 'src/app/models/orden';
+
+declare const message: any;
 
 @Component({
   selector: 'app-ordenes',
@@ -7,15 +11,15 @@ import { Pedidos, OrdenesService } from 'src/app/services/ordenes.service';
   styleUrls: ['./ordenes.component.css']
 })
 export class OrdenesComponent implements OnInit {
-  ordenes: Pedidos[];
 
-  constructor(public ordenesser: OrdenesService) { }
+  recordList: Ordenes[];
+
+  constructor(private ordenesser: OrdenesService) { }
   ngOnInit(): void {
-  //  this.ordenesser.getAll().subscribe(console.log);
-   this.ordenesser.getAll().subscribe(res => {
-      this.ordenes = res;
-      console.log(this.ordenes);
+    this.ordenesser.cargar_orden().subscribe(response => {
+      this.recordList = response;
     });
 
   }
+
 }

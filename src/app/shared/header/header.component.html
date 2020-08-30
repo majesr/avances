@@ -47,18 +47,45 @@
                         <input type="text" class="form-control" placeholder="Search & enter"> <a class="srh-btn"><i class="ti-close"></i></a> </form>
                 </li>
                 <!-- ============================================================== -->
-                <!-- ============================================================== -->
-                <!-- Messages -->
-                <!-- ============================================================== -->
+
                 <li class="nav-item dropdown">
-                    <a routerLinK="pedidos" class="nav-link dropdown-toggle waves-effect waves-dark" aria-haspopup="true" aria-expanded="false"> <i class="mdi mdi-cart-outline"><span class="label label-rouded label-themecolor pull-right" *ngIf="pedidoser.items.length > 0">{{ pedidoser.items.length }}</span></i>
-
+                    <a class="nav-link dropdown-toggle waves-effect waves-dark" href="" id="2" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"> <i class="mdi mdi-cart-outline"><span class="label label-rouded label-themecolor pull-right" *ngIf="pedidoser.items.length > 0">{{ pedidoser.items.length }}</span></i>
                     </a>
+                    <div class="dropdown-menu dropdown-menu-right animated fadeIn">
+                        <ul class="dropdown-user">
+                            <table class="table">
+                                <thead>
+                                    <tr>
+                                        <th> Servicio </th>
+                                        <th> Costo</th>
+                                    </tr>
+                                </thead>
+                                <tbody *ngFor="let p of pedidoser.items; let i = index;">
+                                    <tr>
+                                        <td> {{p.nombre_servicio}} </td>
+                                        <td style="width:100px;"> S/. {{p.costo}} </td>
+                                        <td><a (click)="pedidoser.eliminar_item(i)" class="text-inverse" title="" data-toggle="tooltip"><i class="ti-trash text-dark"></i></a></td>
 
+                                    </tr>
+                                </tbody>
+                            </table>
+                            <hr>
+
+                            <h2> <small>Total a pagar : </small> S/. {{ pedidoser.totalcarrito}}</h2>
+                            <hr>
+                            <li>
+                                <a routerLink="pedidos">
+                                    <h5 class="car text-center">Finalizar Pago</h5>
+                                </a>
+                            </li>
+
+                        </ul>
+                    </div>
                 </li>
                 <!-- ============================================================== -->
-                <!-- End Messages -->
+
                 <!-- ============================================================== -->
+
                 <!-- Language -->
                 <!-- ============================================================== -->
                 <li class="nav-item dropdown">
@@ -74,7 +101,7 @@
                     </a>
                     <div class="dropdown-menu dropdown-menu-right animated fadeIn">
                         <ul class="dropdown-user">
-                            <li><a href="#"><i class="ti-user"></i> Login</a></li>
+                            <li><a routerLink="pedidos"><i class="ti-user"></i> Login</a></li>
                             <li><a href="#"><i class="ti-wallet"></i> Registrate</a></li>
                             <li><a href="#"><i class="ti-email"></i> Unete a nosotros</a></li>
                         </ul>
